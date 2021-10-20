@@ -69,6 +69,7 @@ Rails.application.routes.draw do
     resources :reports, only: %i(index), controller: "companies/reports"
     resources :products, only: %i(index), controller: "companies/products"
   end
+  resources :books, except: %i(show)
   resources :generations, only: %i(show index)
   get "articles/tags/:tag", to: "articles#index", as: :tag, tag: /.+/
   get "pages/tags/:tag", to: "pages#index", as: :pages_tag, tag: /.+/, format: "html"
