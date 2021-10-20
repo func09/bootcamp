@@ -36,6 +36,7 @@ ja:
       memo: メモ
       reference_book: 参考書籍
       campaign: お試し延長
+      book: 参考書籍
     attributes:
       user:
         login_name: アカウント
@@ -97,11 +98,15 @@ ja:
         progress: 進捗の計算
         categories: カテゴリー
         memo: メンター向けメモ
-      practice/reference_books:
+      book:
         title: タイトル
         price: 価格
         page_url: URL
         cover: 表紙画像
+        description: 説明
+      practice/practices_books:
+        book: 参考書籍
+        must_read: 必読
       product:
         user: ユーザー
         practice: プラクティス
@@ -172,6 +177,7 @@ ja:
         end_at: イベント終了日時
         open_start_at: 募集開始日時
         open_end_at: 募集終了日時
+<<<<<<< HEAD
       reference_book:
         title: タイトル
         price: 価格
@@ -183,6 +189,8 @@ ja:
         start_at: 開始日時
         end_at: 終了日時
         title: タイトル
+=======
+>>>>>>> プラクティスの追加・修正画面で登録されている参考書籍を選んで登録できるように変更
     enums:
       user:
         job:
