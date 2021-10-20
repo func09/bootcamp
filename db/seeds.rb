@@ -27,7 +27,8 @@ ActiveRecord::FixtureSet.create_fixtures 'db/fixtures', %i[
   pages
   participations
   practices
-  reference_books
+  books
+  practices_books
   products
   questions
   reactions
