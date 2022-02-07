@@ -170,3 +170,10 @@ header.page-header
                             | 提出物はまだありません。
         - else
           #js-reports(data-user-id="#{@report.user.id}" data-limit="10")
+
+- if params[:celebrate_hundred].eql?('true')
+    = render '/shared/modal', id: 'modal-hundred-celebration', title: 'おめでとう！', auto_show: true
+      .modal__description.is-md
+        .a-long-text
+          p
+            | 日報を100回提出しました！
