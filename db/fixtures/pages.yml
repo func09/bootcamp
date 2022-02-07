@@ -35,7 +35,8 @@ page5:
   title: WIPのテスト
   body: WIP
   user: komagata
-  published_at: "2021-04-01 00:00:00"
+  wip: true
+  # wip の場合は published_at の値が未設定の状態でレコードが作成される
 
 page6:
   title: ヘルプのページ
