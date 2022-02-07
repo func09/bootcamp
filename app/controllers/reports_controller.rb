@@ -141,7 +141,24 @@ class ReportsController < ApplicationController
   end
 
   def params_hash(report)
-    { celebrate_hundred: !report.wip? && current_user.reports.count == 100 }
+    { celebrate_report_counts: celebration_or_param(report) }
+  end
+
+  def celebrating_counts
+    [100]
+  end
+
+  def celebration_or_param(report)
+    if report.wip?
+      ''
+    else
+      report_count = current_user.reports.count
+      if celebrating_counts.any?(report_count)
+        report_count
+      else
+        ''
+      end
+    end
   end
 
   def set_watch
