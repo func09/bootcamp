@@ -150,13 +150,13 @@ class ReportsController < ApplicationController
 
   def celebration_or_param(report)
     if report.wip?
-      ''
+      false
     else
       report_count = current_user.reports.count
       if celebrating_counts.any?(report_count)
         report_count
       else
-        ''
+        false
       end
     end
   end
