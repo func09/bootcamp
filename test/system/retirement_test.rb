@@ -29,7 +29,9 @@ class RetirementTest < ApplicationSystemTestCase
 
     login_user 'osnashi', 'testtest'
     assert_text 'ログインができません'
+  end
 
+  test 'enables retirement regardless of validity of discord id' do
     user = users(:discordinvalid)
     visit_with_auth new_retirement_path, 'discordinvalid'
     choose 'とても悪い', visible: false
