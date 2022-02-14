@@ -29,6 +29,19 @@ class RetirementTest < ApplicationSystemTestCase
 
     login_user 'osnashi', 'testtest'
     assert_text 'ログインができません'
+
+    user = users(:discordinvalid)
+    visit_with_auth new_retirement_path, 'discordinvalid'
+    choose 'とても悪い', visible: false
+    click_on '退会する'
+    page.driver.browser.switch_to.alert.accept
+    assert_text '退会処理が完了しました'
+    assert_equal Date.current, user.reload.retired_on
+    assert_equal 'discordinvalidさんが退会しました。', users(:komagata).notifications.last.message
+    assert_equal 'discordinvalidさんが退会しました。', users(:machida).notifications.last.message
+
+    login_user 'discordinvalid', 'testtest'
+    assert_text 'ログインができません'
   end
 
   test 'delete unchecked products when the user retired' do
